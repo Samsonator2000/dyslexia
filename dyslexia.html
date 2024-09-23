@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexic translator
+    </title>
+    <style>
+        @font-face {
+            font-family: OpenDyslexic;
+            src: url('OpenDyslexic-Regular.woff');
+        }
+        body{
+            background-color: rgb(212, 192, 127);
+            font-family: OpenDyslexic;
+
+        }
+        #out{
+            color:black;
+            background-color: rgb(212, 192, 127);
+            display:flex;
+            padding: 30px;
+            font-size: large;
+            word-spacing: 5px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id ="inp">
+    <input type="button" value="run" onclick="run()">
+    <input type="button" value ="clear"onclick="clearText()">
+    <div id="outBox"><u id="out">Test data</u></div>
+
+    <script>
+        function clearText(){
+            document.getElementById("inp").value = "";
+
+        }
+        function run(){
+            let text = document.getElementById("inp").value;
+            document.getElementById("out").innerHTML = text;
+        }
+
+    </script>
+</body>
+</html>
